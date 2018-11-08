@@ -123,7 +123,12 @@ function normalize(str){
   if(str === './') {
     str = '';
   } else if(last && last.indexOf('.') < 0 && str[str.length - 1] != '/'){
-    str += '/';
+    
+    // only add "/" when platform is not windows  
+    if(device.platform !== 'windows')
+    {
+      str += '/';
+    }
   }
   return str;
 }
