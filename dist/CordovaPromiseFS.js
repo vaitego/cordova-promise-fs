@@ -125,7 +125,7 @@ function normalize(str){
   } else if(last && last.indexOf('.') < 0 && str[str.length - 1] != '/'){
     
     // only add "/" when platform is not windows  
-    if(device.platform !== 'windows')
+    if(typeof cordova !== 'undefined' && device.platform !== 'windows')
     {
       str += '/';
     }
